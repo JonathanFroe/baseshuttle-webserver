@@ -74,24 +74,31 @@ def create_game():
 
 @app.route('/session/<session_id>/character', methods=['GET', 'POST'])
 def create_character(session_id):
+    # check if session-ID is real
     if db.session.query(Group.group_id).filter_by(group_id=session_id).scalar() is None:
         return redirect(url_for('join_game'))
+    # if form is filled
     if request.method == 'POST':
+        #Create unique id for new user
         unique_id = str(uuid.uuid4())
+        #Check if the id is used
         while User.query.filter_by(user_id=unique_id).scalar() is not None:
             unique_id = str(uuid.uuid4())
+        #Add to database
         user = User(user_id=unique_id,
                     username=request.form['name'], joined_group_id=session_id)
         db.session.add(user)
         db.session.flush()
+        #Add Cookie --> identify user
         session['name'] = user.username
         session['id'] = user.user_id
         session['session_id'] = session_id
         session['reload'] = False
         db.session.commit()
+        #Redirect to the main side
         return redirect(url_for('play', session_id=session_id, reload=False))
-    #*look
-
+    #*maybe: character look
+    #Return choosing character name
     return render_template('character.html')
 
 
@@ -241,4 +248,4 @@ def get_data():
 
 
 if __name__ == "__main__":
-    socketio.run(app, debug=True, host='0.0.0.0')
+    socketio.run(app, debug=True, host='0.0.0.0') #This is only for testing
