@@ -1,4 +1,3 @@
-import os  # *Löscht alle alten Werte in der Datenbank
 import uuid
 
 from flask import Flask, redirect, render_template, request, session, url_for
