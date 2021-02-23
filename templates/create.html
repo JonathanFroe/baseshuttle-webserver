@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/general.css')}}"
+        />
+        <title>Baseshuttle</title>
+    </head>
+    <body>
+        <a href="/" class="home">&#8962;</a>
+        <div class="multi_input">
+            <form method="POST">
+                <label for="id">Session-ID:</label>
+                <input
+                    type="text"
+                    name="id"
+                    value="{{ session_id }}"
+                    readonly
+                />
+                <label for="url">Link zum Beitreten:</label>
+                <input type="text" name="url" value="{{ url }}" readonly />
+                <label for="card_counter">Anzahl an zufällig generierten Karten</label>
+                <input type="number" name="card_counter" value="{{ card_counter }}" required />
+                <label for="card_elements"
+                    >Karten (jede Zeile ist eine Karte):</label
+                >
+                <textarea rows="5" name="card_elements">
+{{ card_elements }}</textarea
+                >
+                <input
+                    type="submit"
+                    name="refresh"
+                    value="Neu generieren!"
+                /><br />
+                <input type="submit" name="create" value="Spiel erstellen!" />
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
+        <script src="{{ url_for('static', filename='javascript/play.js') }}"></script>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/general.css')}}"
+        />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/play.css')}}"
+        />
+        <title>Baseshuttle</title>
+    </head>
+    <body>
+        <input type="hidden" id="my_id" value="{{ my_id }}" />
+        <div id="info_text"></div>
+
+        <div id="card_container"></div>
+        <div id="player_container"></div>
+        <div id="data_container"></div>
+    </body>
+</html>

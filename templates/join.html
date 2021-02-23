@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/general.css')}}"
+        />
+        <title>Baseshuttle</title>
+    </head>
+    <body>
+        <a href="/" class="home">&#8962;</a>
+        <div class="only_input">
+            <form method="POST">
+                <input
+                    type="text"
+                    name="id"
+                    placeholder="Session ID"
+                    maxlength="6"
+                    onkeyup="this.value = this.value.toUpperCase();"
+                    required
+                    autofocus
+                />
+            </form>
+        </div>
+    </body>
+</html>

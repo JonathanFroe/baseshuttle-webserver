@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+:root {
+    --primary-color: #11998e;
+    --background-color: #222222;
+    --grey: #9b9b9b;
+    --select_color: yellow;
+}
+
+
+
+body {
+    font-family: "Indie Flower";
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+body {
+    background: 
+    linear-gradient(135deg, var(--background-color) 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, var(--background-color) 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, var(--background-color) 25%, transparent 25%),
+    linear-gradient(45deg, var(--background-color) 25%, transparent 25%);	
+    background-size: 2em 2em;
+    background-color: #111111;
+}
+
+.only_input {
+    display: block;
+    position: relative;
+    width: 50%;
+    margin: auto;
+    margin-top: 15%;
+    text-align: center;
+    background-color: var(--background-color);
+    padding: 40px;
+    border-radius: 40px;
+}
+
+.multi_input {
+    display: block;
+    position: relative;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 10%;
+    background-color: var(--background-color);
+    padding: 40px;
+    border-radius: 40px;
+}
+
+
+
+label {
+    display: block;
+    font-size: 100%;
+    width: 100%;
+    padding-top: 30px;
+    text-align: left;
+}
+
+input[type="submit"] {
+    font-family: "Indie Flower";
+    font-size: 200%;
+    font-weight: bolder;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    margin: 20px auto;
+    cursor: pointer;
+    border: 4px solid var(--grey);
+    border-radius: 10px;
+    padding: 5px 10%;
+    white-space: normal;
+}
+
+textarea {
+    font-family: "Indie Flower";
+    color: var(--primary-color);
+    font-size: 200%;
+    font-weight: bolder;
+    width: 100%;
+    outline: 0;
+    border: 2px solid var(--grey);
+    margin-top: 15px;
+    background: none;
+    white-space: nowrap;
+}
+
+input[type="text"],
+input[type="number"] {
+    font-family: "Indie Flower";
+    color: var(--primary-color);
+    font-size: xx-large;
+    font-weight: bolder;
+    width: 100%;
+    outline: 0;
+    border: 0;
+    border-bottom: 2px solid var(--grey);
+    background: none;
+}
+
+.choose:hover,
+.home:hover,
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus {
+    color: var(--select_color);
+    border-color: var(--select_color);
+}
+
+.choose {
+    background-color: var(--background-color);
+    position: relative;
+    color: var(--primary-color);
+    font-size: 10vw;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    border: 2px solid var(--grey);
+    border-radius: 20px;
+    width: 100%;
+    margin: 5% auto;
+    padding: 20px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+button {
+    font-family: "Indie Flower";
+    display: inline-block;
+    border-radius: 10px;
+}
+
+
+.selected {
+    color: var(--select_color);
+}
+
+.home {
+    color: var(--primary-color);
+    font-size: 350%;
+    position: relative;
+    text-decoration: none;
+    top: 0px;
+    left: 0px;
+    padding: 0 30px;
+    margin: 20px 5%;
+    background-color: var(--background-color);
+    border-radius: 40px;
+}
+
+@media (max-width: 700px) {
+    .only_input {
+        width: 70%;
+    }
+
+    .multi_input {
+        width: 70%;
+    }
+}
+@media (min-width: 1200px){
+    .choose {
+        font-size: 800%;
+    }
+    .only_input{
+        margin-top: 10%;
+    }
+    .multi_input{
+        margin-top: 5%;
+    }
+}

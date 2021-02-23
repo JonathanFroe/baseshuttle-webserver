@@ -1,0 +1,95 @@
+:root {
+    --primary-color: #11998e;
+    --background-color: #222222;
+    --grey: #9b9b9b;
+    --select_color: yellow;
+}
+
+.alert {
+    font-size: 125%;
+    position: absolute;
+    width: auto;
+    padding: 5px 20px;
+    background-color: var(--background-color);
+    bottom: 10px;
+    left: 10px;
+    border: 2px solid var(--grey);
+    border-radius: 5px;
+}
+
+#card_container {
+    position: absolute;
+    right: 0;
+    width: 65%;
+}
+
+#player_container {
+    position: absolute;
+    left: 0;
+    width: 35%;
+}
+
+.card {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    font-size: 200%;
+    margin: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    border: 4px solid var(--grey);
+    padding: 5px 10%;
+}
+
+
+.player {
+    width: 70%;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    font-size: 200%;
+    font-weight: 900;
+    margin: 10px;
+    margin-left: 15%;
+    cursor: pointer;
+    overflow: hidden;
+    border: 4px solid var(--grey);
+    padding: 5px 10%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#info_text {
+    position: relative;
+    font-size: 300%;
+    width: 100%;
+    text-align: center;
+}
+
+.data_container {
+    text-align: center;
+    font-size: 400%;
+}
+
+.data {
+    display: block;
+    text-align: center;
+    font-size: 350%;
+}
+
+@media (max-width: 600px) {
+    #card_container {
+        text-align: right;
+    }
+
+    #player_container {
+        text-align: left;
+    }
+    .card {
+        font-size: 150%;
+    }
+    .player {
+        font-size: 159%;
+        margin: 10px;
+        width: 100%;
+    }
+}
