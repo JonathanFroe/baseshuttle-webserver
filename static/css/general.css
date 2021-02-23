@@ -13,6 +13,7 @@ body {
     font-family: "Indie Flower";
     background-color: var(--background-color);
     color: var(--primary-color);
+    margin: 0;
 }
 
 body {
@@ -149,6 +150,25 @@ button {
     background-color: var(--background-color);
     border-radius: 40px;
 }
+
+.main{
+    margin-bottom: 40px;
+}
+
+footer{
+    font-size: 125%;
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+    padding-left: 1em;
+}
+
+footer a {
+    color: orange;
+    text-decoration: none;
+}
+
+
 
 @media (max-width: 700px) {
     .only_input {
