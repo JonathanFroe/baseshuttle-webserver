@@ -90,7 +90,7 @@ def create_character(session_id):
         session['reload'] = False
         db.session.commit()
         return redirect(url_for('play', session_id=session_id, reload=False))
-    # todo look
+    #*look
 
     return render_template('character.html')
 
