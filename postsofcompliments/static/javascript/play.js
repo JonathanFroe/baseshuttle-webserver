@@ -75,7 +75,7 @@ socket.on("chose_card", function (msg) {
             var button = document.createElement("button");
             button.id = card;
             button.className = "card";
-            button.innerHTML = "Karte ";
+            button.innerHTML = "Karte";
             button.setAttribute("onclick", "select_card(this.id)");
             document.getElementById("card_container").appendChild(button);
         }
@@ -88,7 +88,7 @@ socket.on("card_text", function (msg) {
     if (msg[0] == document.getElementById("my_id").value) {
         card_text = msg[1];
         document.getElementById("info_text").innerHTML =
-            'Deine Karte lautet: " ' + card_text + '". Wähle einen Spieler!';
+            'Deine Karte lautet: "' + card_text + '". Wähle einen Spieler!';
     }
 });
 

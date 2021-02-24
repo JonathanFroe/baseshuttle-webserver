@@ -61,8 +61,12 @@
 #info_text {
     position: relative;
     font-size: 300%;
-    width: 100%;
+    width: 80%;
+    margin: auto;
     text-align: center;
+    background-color: var(--background-color);
+    border-radius: 40px;
+    padding: 20px;
 }
 
 .data_container {
@@ -83,6 +87,9 @@
 
     #player_container {
         text-align: left;
+    }
+    #info_text {
+        font-size: 175%;
     }
     .card {
         font-size: 150%;

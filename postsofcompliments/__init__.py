@@ -196,7 +196,7 @@ def select_card(card_id):
         'session_id', None)).first().active_cards
     cards = cards.split(";")
     socketio.emit('card_text', [session.get('id', None), cards[int(
-        card_id)]], room=session.get('session_id', None))
+        card_id)][:-1]], room=session.get('session_id', None))
     socket_update(session.get('session_id', None))
 
 
