@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 from random import choice, choices
 from string import ascii_uppercase
 
-from __main__ import socketio, db
+from main import socketio, db
 
 postsofcompliments = Blueprint('postsofcompliments', __name__, template_folder='templates', static_folder='static', url_prefix='/postsofcompliments')
 
