@@ -151,8 +151,21 @@ button {
     border-radius: 40px;
 }
 
+#session_id {
+    font-size: 100%;
+    position: relative;
+    top: 0;
+    z-index: -1;
+    right: 0;
+    padding-right: 1em;
+}
+
+#session_id strong {
+    font-family: Arial;
+}
+
 .main{
-    margin-bottom: 40px;
+    padding-bottom: 60px;
 }
 
 footer{
@@ -167,7 +180,6 @@ footer a {
     color: orange;
     text-decoration: none;
 }
-
 
 
 @media (max-width: 700px) {
@@ -189,4 +201,5 @@ footer a {
     .multi_input{
         margin-top: 5%;
     }
+
 }

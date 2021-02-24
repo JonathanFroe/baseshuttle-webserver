@@ -105,7 +105,7 @@ def play(session_id):
         return redirect(url_for('postsofcompliments.join_game'))
     if db.session.query(User.user_id).filter_by(user_id=session.get("id", None)).scalar() is None:
         return redirect(url_for('postsofcompliments.create_character', session_id=session_id))
-    return render_template('play.html', my_id=session.get('id', None))
+    return render_template('play.html', my_id=session.get('id', None), session_id=session_id)
 
 
 def socket_update(room):

@@ -15,13 +15,12 @@ socketio = SocketIO(app, cors_allowed_origins=[
                     "https://baseshuttle.de", "https://www.baseshuttle.de", "http://127.0.0.1:5000"])
 
 from postsofcompliments import postsofcompliments
-app.register_blueprint(postsofcompliments)
 
+app.register_blueprint(postsofcompliments)
 
 @app.route('/')
 def index():
     return redirect(url_for('postsofcompliments.select'))
 
-
 if __name__ == "__main__":
-    socketio.run(app, debug=True, host='0.0.0.0')  # This is only for testing
+    socketio.run(app, debug=True, host='0.0.0.0') #This is only for testing
