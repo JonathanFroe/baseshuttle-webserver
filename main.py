@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, session, url_for
+from flask import Flask, redirect, url_for
 from flask_socketio import SocketIO
 from flask_sqlalchemy import SQLAlchemy
 
@@ -17,6 +17,10 @@ socketio = SocketIO(app, cors_allowed_origins=[
 from postsofcompliments import postsofcompliments
 
 app.register_blueprint(postsofcompliments)
+
+@app.route('/')
+def index():
+    return redirect(url_for('postsofcompliments.select'))
 
 if __name__ == "__main__":
     socketio.run(app, debug=True, host='0.0.0.0') #This is only for testing

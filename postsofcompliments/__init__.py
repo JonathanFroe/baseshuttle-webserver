@@ -41,9 +41,9 @@ def select():
 @postsofcompliments.route('/join', methods=['GET', 'POST'])
 def join_game():
     if request.method == 'POST':
-        return redirect(url_for('create_character', session_id=request.form['id']))
+        return redirect(url_for('postsofcompliments.create_character', session_id=request.form['id']))
     elif request.args.get('id'):
-        return redirect(url_for('create_character', session_id=request.args.get('id')))
+        return redirect(url_for('postsofcompliments.create_character', session_id=request.args.get('id')))
     else:
         return render_template("join.html")
 
