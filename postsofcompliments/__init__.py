@@ -11,10 +11,6 @@ from main import socketio, db
 
 postsofcompliments = Blueprint('postsofcompliments', __name__, template_folder='templates', static_folder='static', url_prefix='/postsofcompliments')
 
-
-
-
-
 class User(db.Model):
     """ Database User """
     user_id = db.Column(db.String(36), primary_key=True, unique=True)
