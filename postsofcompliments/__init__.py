@@ -1,4 +1,5 @@
 import uuid
+import logging
 
 from flask import Blueprint, redirect, render_template, request, session, url_for
 from flask_socketio import SocketIO, join_room
@@ -8,6 +9,8 @@ from random import choice, choices
 from string import ascii_uppercase
 
 from main import socketio, db
+
+logging.basicConfig(filename='info.log', level=logging.DEBUG)
 
 postsofcompliments = Blueprint('postsofcompliments', __name__, template_folder='templates', static_folder='static', url_prefix='/postsofcompliments')
 
@@ -53,7 +56,7 @@ def create_game():
                 request.form['card_elements'].split('\n')))
             db.session.add(session)
             db.session.commit()
-            print(request.form['id'] + " created")  # *temp
+            logging.info(request.form['id'] + 'created')# *temp
             return redirect(url_for('postsofcompliments.create_character', session_id=request.form['id']))
         if "refresh" in request.form:
             card_counter = int(request.form['card_counter'])
@@ -154,9 +157,6 @@ def disconnect():
             print(group.group_id + "was closed")
             Group.query.filter_by(group_id=group.group_id).delete()
         db.session.commit()
-        # *temp
-        print(
-            f"{session.get('name', None)} with the ID {session.get('id', None)} has disconnected")
         socket_update(session.get('session_id', None))
 
 
