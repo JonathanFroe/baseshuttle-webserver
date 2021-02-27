@@ -3,6 +3,7 @@ from flask_socketio import SocketIO
 from flask_sqlalchemy import SQLAlchemy
 
 import uuid
+import logging
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = uuid.uuid4().hex
@@ -14,8 +15,9 @@ db = SQLAlchemy(app)
 socketio = SocketIO(app, cors_allowed_origins=[
                     "https://baseshuttle.de", "https://www.baseshuttle.de", "http://127.0.0.1:5000"])
 
-from postsofcompliments import postsofcompliments
+logging.basicConfig(filename='info.log', level=logging.DEBUG)
 
+from postsofcompliments import postsofcompliments
 app.register_blueprint(postsofcompliments)
 
 @app.route('/')
