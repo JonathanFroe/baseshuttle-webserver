@@ -133,7 +133,7 @@ def connect():
                       ' has entered the session', room=room)
         socket_update(session.get('session_id', None))
     else:
-        socketio.emit('redirect', url_for('postsofcompliments.create_character', session_id=room))
+        socketio.emit('redirect', url_for('postsofcompliments.join_game'))
 
 
 @socketio.on('disconnect')
