@@ -15,7 +15,7 @@ db = SQLAlchemy(app)
 socketio = SocketIO(app, cors_allowed_origins=[
                     "https://baseshuttle.de", "https://www.baseshuttle.de", "http://127.0.0.1:5000"])
 
-logging.basicConfig(filename='info.log', level=logging.DEBUG)
+logging.basicConfig(format='%(asctime)s\t%(levelname)s:%(message)s',filename='info.log', level=logging.DEBUG)
 
 from postsofcompliments import postsofcompliments
 app.register_blueprint(postsofcompliments)
