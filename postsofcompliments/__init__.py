@@ -8,10 +8,9 @@ from flask_sqlalchemy import SQLAlchemy
 from random import choice, choices
 from string import ascii_uppercase
 
-try:
-    from main import socketio, db
-except:
-    from __main__ import socketio, db
+
+from main import socketio, db
+
 
 postsofcompliments = Blueprint('postsofcompliments', __name__, template_folder='templates', static_folder='static', url_prefix='/postsofcompliments')
 
@@ -54,7 +53,7 @@ def create_game():
     if request.method == 'POST':
         if "create" in request.form:
             session = Group(group_id=request.form['id'], active_cards=";".join(
-                request.form['card_elements'].split('\n')))
+                request.form['card_elements'].split('\n')).replace('\r',""))
             db.session.add(session)
             db.session.commit()
             logging.info(request.form['id'] + ' created')# *temp
@@ -155,7 +154,6 @@ def disconnect():
             else:
                 group.user_turntable = None
         if User.query.filter_by(joined_group_id=session.get('session_id', None)).scalar() is None:
-            print(group.group_id + "was closed")
             Group.query.filter_by(group_id=group.group_id).delete()
         db.session.commit()
         socket_update(session.get('session_id', None))
@@ -197,7 +195,7 @@ def select_card(card_id):
         'session_id', None)).first().active_cards
     cards = cards.split(";")
     socketio.emit('card_text', [session.get('id', None), cards[int(
-        card_id)][:-1]], room=session.get('session_id', None))
+        card_id)]], room=session.get('session_id', None))
     socket_update(session.get('session_id', None))
 
 
@@ -212,6 +210,7 @@ def select_player(msg):
     cards = Group.query.filter_by(group_id=session.get(
         'session_id', None)).first().active_cards
     cards = cards.split(";")
+    logging.warn(cards)
     cards.remove(msg[1])
     if len(cards) > 0:
         Group.query.filter_by(group_id=session.get(
@@ -226,6 +225,7 @@ def select_player(msg):
     turntable = turntable.split(";")
     turntable.append(turntable[0])
     turntable.remove(turntable[0])
+    logging.info(turntable)
     group.user_turntable = ";".join(turntable)
     db.session.commit()
     socket_update(session.get('session_id', None))

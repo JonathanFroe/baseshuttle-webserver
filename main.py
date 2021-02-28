@@ -13,7 +13,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 socketio = SocketIO(app, cors_allowed_origins=[
-                    "https://baseshuttle.de", "https://www.baseshuttle.de", "http://127.0.0.1:5000"])
+                    "https://baseshuttle.de", "https://www.baseshuttle.de", "http://127.0.0.1:5000", "http://192.168.178.59:5000"])
 
 logging.basicConfig(format='%(asctime)s\t%(levelname)s:%(message)s',filename='info.log', level=logging.DEBUG)
 
