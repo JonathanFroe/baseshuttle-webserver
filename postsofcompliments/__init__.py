@@ -210,7 +210,6 @@ def select_player(msg):
     cards = Group.query.filter_by(group_id=session.get(
         'session_id', None)).first().active_cards
     cards = cards.split(";")
-    logging.warn(cards)
     cards.remove(msg[1])
     if len(cards) > 0:
         Group.query.filter_by(group_id=session.get(
