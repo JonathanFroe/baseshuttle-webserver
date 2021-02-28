@@ -154,7 +154,7 @@ def disconnect():
                     group.user_turntable = turntable[0]
             else:
                 group.user_turntable = None
-        if User.query.filter_by(joined_group_id=session.get('session_id', None)).scalar() is None:
+        if User.query.filter_by(joined_group_id=session.get('session_id', None)).first() is None:
             Group.query.filter_by(group_id=group.group_id).delete()
         db.session.commit()
         socket_update(session.get('session_id', None))
