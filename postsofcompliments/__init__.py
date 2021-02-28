@@ -128,6 +128,7 @@ def connect():
         else:
             group.user_turntable = session.get('id', None)
         db.session.commit()
+        logging.info(session.get('id') +" entered connection")
         socketio.emit('alert', session.get('name', None) +
                       ' has entered the session', room=room)
         socket_update(session.get('session_id', None))
@@ -224,7 +225,6 @@ def select_player(msg):
     turntable = turntable.split(";")
     turntable.append(turntable[0])
     turntable.remove(turntable[0])
-    logging.info(turntable)
     group.user_turntable = ";".join(turntable)
     db.session.commit()
     socket_update(session.get('session_id', None))
