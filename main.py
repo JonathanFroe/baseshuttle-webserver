@@ -1,11 +1,11 @@
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, render_template
 from flask_socketio import SocketIO
 from flask_sqlalchemy import SQLAlchemy
 
 import uuid
 import logging
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", static_url_path='')
 app.config['SECRET_KEY'] = uuid.uuid4().hex
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
