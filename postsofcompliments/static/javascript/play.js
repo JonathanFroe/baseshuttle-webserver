@@ -37,7 +37,7 @@ socket.on("turn", function (msg) {
                         .classList.add("selected");
                 } else {
                     document.getElementById("info_text").innerHTML =
-                        player[1] + " ist gerade an der Runde";
+                        player[1] + " ist gerade an der Reihe";
                     document
                         .getElementById("info_text")
                         .classList.remove("selected");
