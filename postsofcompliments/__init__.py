@@ -174,7 +174,11 @@ def get_player():
         joined_group_id=session.get('session_id', None)).all()
     player = []
     for element in player_list:
-        player.append([element.user_id, element.username])
+        if element.data is not None:
+            card_count = len(element.data.split(";"))
+        else:
+            card_count = 0
+        player.append([element.user_id, element.username, card_count])
     socketio.emit('chose_player', player, room=session.get('session_id', None))
 
 

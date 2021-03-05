@@ -58,7 +58,7 @@ socket.on("chose_player", function (msg) {
             var button = document.createElement("button");
             button.id = player[0];
             button.className = "player";
-            button.innerHTML = player[1];
+            button.innerHTML = player[1] + " ["+player[2]+"]";
             button.setAttribute("onclick", "select_player(this.id)");
             document.getElementById("player_container").appendChild(button);
         }
