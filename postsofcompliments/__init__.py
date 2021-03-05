@@ -12,7 +12,9 @@ from string import ascii_uppercase
 from main import socketio, db
 
 
-postsofcompliments = Blueprint('postsofcompliments', __name__, template_folder='templates', static_folder='static', url_prefix='/postsofcompliments')
+postsofcompliments = Blueprint('postsofcompliments', __name__, template_folder='templates',
+                               static_folder='static', url_prefix='/postsofcompliments')
+
 
 class User(db.Model):
     """ Database User """
@@ -53,10 +55,10 @@ def create_game():
     if request.method == 'POST':
         if "create" in request.form:
             session = Group(group_id=request.form['id'], active_cards=";".join(
-                request.form['card_elements'].split('\n')).replace('\r',""))
+                request.form['card_elements'].split('\n')).replace('\r', ""))
             db.session.add(session)
             db.session.commit()
-            logging.info(request.form['id'] + ' created')# *temp
+            logging.info(request.form['id'] + ' created')  # *temp
             return redirect(url_for('postsofcompliments.create_character', session_id=request.form['id']))
         if "refresh" in request.form:
             card_counter = int(request.form['card_counter'])
@@ -76,26 +78,26 @@ def create_character(session_id):
         return redirect(url_for('postsofcompliments.join_game'))
     # if form is filled
     if request.method == 'POST':
-        #Create unique id for new user
+        # Create unique id for new user
         unique_id = str(uuid.uuid4())
-        #Check if the id is used
+        # Check if the id is used
         while User.query.filter_by(user_id=unique_id).scalar() is not None:
             unique_id = str(uuid.uuid4())
-        #Add to database
+        # Add to database
         user = User(user_id=unique_id,
                     username=request.form['name'], joined_group_id=session_id)
         db.session.add(user)
         db.session.flush()
-        #Add Cookie --> identify user
+        # Add Cookie --> identify user
         session['name'] = user.username
         session['id'] = user.user_id
         session['session_id'] = session_id
         session['reload'] = False
         db.session.commit()
-        #Redirect to the main side
+        # Redirect to the main side
         return redirect(url_for('postsofcompliments.play', session_id=session_id, reload=False))
-    #*maybe: character look
-    #Return choosing character name
+    # *maybe: character look
+    # Return choosing character name
     return render_template('character.html')
 
 
@@ -128,7 +130,7 @@ def connect():
         else:
             group.user_turntable = session.get('id', None)
         db.session.commit()
-        logging.info(session.get('id') +" entered connection")
+        logging.info(session.get('id') + " entered connection")
         socketio.emit('alert', session.get('name', None) +
                       ' has entered the session', room=room)
         socket_update(session.get('session_id', None))
