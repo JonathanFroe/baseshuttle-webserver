@@ -11,6 +11,14 @@ def main():
         email = request.form['email']
         time = request.form['time']
         firstname = request.form['firstname']
+        lastname = request.fornm['lastname']
+        if time == 1:
+            with open('data/time_one.csv', 'w') as file:
+                file.write(";".join([email,firstname,lastname]))              
+        else:
+            with open('data/time_two.csv', 'w') as file:
+                file.write(";".join([email,firstname,lastname])) 
         
+        return render_template('formular.html')
         
     return render_template('formular.html')
