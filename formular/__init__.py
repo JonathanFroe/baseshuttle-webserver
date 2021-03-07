@@ -17,7 +17,7 @@ def main():
                 file.write(";".join([email,firstname,lastname]))              
         else:
             with open('data/time_two.csv', 'w') as file:
-                file.write(";".join([email,firstname,lastname])) 
+                file.write(";".join([email,firstname,lastname]))
         
         return render_template('formular.html')
         
