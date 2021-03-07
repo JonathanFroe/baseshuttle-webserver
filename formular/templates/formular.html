@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)https://bdkj-m.de/holywood -->
+<html lang="de">           
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <title>Holywood-Gottesdienst am 07.03.2021</title>
+        <meta name="robots" content="noindex, nofollow" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{{ url_for('formular.static', filename='css/normalize.css') }}"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{{ url_for('formular.static', filename='css/style.css') }}"
+        />
+    </head>
+    <body>
+        <div id="site-inner">
+            <header>
+                <h1>Holywood-Gottesdienst am 07.03.2021</h1>
+                <p>
+                    Aufgrund der staatlichen Maßnahmen zur Eindämmung des
+                    Coronavirus ist die Zahl der Gottesdienst-Besucher*innen
+                    beschränkt. Die Teilnahme ist nur nach vorheriger Anmeldung
+                    zulässig.
+                </p>
+                <p>
+                    <b>Wichtig:</b> Die Anmeldung ist verbindlich. Solltest du
+                    doch nicht teilnehmen können oder wollen, dann storniere
+                    bitte deine Plätze über den Link in der Bestätigungsmail.
+                </p>
+            </header>
+            <main>
+                <form method="post">
+                    <div>
+                        Für welche Uhrzeit möchtest du dich anmelden?
+                        <div class="radio">
+                            <div>
+                                <input
+                                    type="radio"
+                                    id="time1"
+                                    name="time"
+                                    value="1"
+                                    required=""
+                                /><label for="time1"
+                                    >18:00 Uhr<br /><i>0 Plätze frei</i></label
+                                >
+                            </div>
+                            <div>
+                                <input
+                                    type="radio"
+                                    id="time2"
+                                    name="time"
+                                    value="2"
+                                    required=""
+                                /><label for="time2"
+                                    >20:00 Uhr<br /><i>3 Plätze frei</i></label
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        E-Mail-Adresse<input
+                            id="test"
+                            type="email"
+                            name="email"
+                            required=""
+                        />
+                    </div>
+                    <div>
+                        Vorname<input
+                            type="text"
+                            name="firstname"
+                            required=""
+                        />
+                    </div>
+                    <div>
+                        Nachname<input
+                            type="text"
+                            name="lastname"
+                            required=""
+                        />
+                    </div>
+                    <div>
+                        Anmeldung von Begleitpersonen<br /><i
+                            >(max. 3 weitere Personen aus dem eigenen
+                            Hausstand)</i
+                        >
+                        <div class="select-wrapper">
+                            <select name="companions" required="">
+                                <option value="" disabled="" selected="">
+                                    Bitte auswählen...
+                                </option>
+                                <option value="0">Keine Begleitperson</option>
+                                <option value="1">1 Begleitperson</option>
+                                <option value="2">2 Begleitpersonen</option>
+                                <option value="3">3 Begleitpersonen</option>
+                            </select>
+                        </div>
+                    </div>
+                    <label
+                        ><input
+                            type="checkbox"
+                            name="privacy"
+                            required=""
+                        /><span class="checkbox"></span>Ich habe den
+                        untenstehenden Datenschutzhinweis zur Kenntnis
+                        genommen.</label
+                    >
+                    <button type="submit">Anmelden</button>
+                </form>
+            </main>
+            <aside>
+                <p><b>Hinweis zum Datenschutz:</b></p>
+                <p>
+                    Wir erheben deine Daten zum Zweck der
+                    Kontaktpersonenermittlung im Fall einer festgestellten
+                    Infektion mit dem Coronavirus SARS-CoV-2. Die Verarbeitung
+                    erfolgt zum Schutz lebenswichtiger Interessen und beruht auf
+                    der Rechtsgrundlage des § 6 Abs. 1 lit. e KDG.
+                </p>
+                <p>
+                    Die erhobenen Daten sind den zuständigen Gesundheitsbehörden
+                    auf deren Verlangen hin zu übermitteln, soweit dies zur
+                    Kontaktpersonenermittlung im Fall einer festgestellten
+                    Infektion mit dem Coronavirus SARS-CoV-2 erforderlich ist.
+                </p>
+                <p>
+                    Die Daten werden vier Wochen nach dem Gottesdienst gelöscht.
+                </p>
+                <p>
+                    Weitere Informationen findest du in unserer
+                    <a
+                        href="http://www.bdkj-muenchen.de/menue-footer/datenschutzerklaerung"
+                        target="_blank"
+                        rel="noopener"
+                        >Datenschutzerklärung</a
+                    >.
+                </p>
+            </aside>
+            <footer>
+                <p><b>Veranstalter:</b></p>
+                <p>
+                    BDKJ in der Region München e.V. ⋅
+                    <a
+                        href="http://www.bdkj-muenchen.de/menue-footer/impressum"
+                        target="_blank"
+                        rel="noopener"
+                        >Impressum</a
+                    >
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>

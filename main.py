@@ -20,9 +20,9 @@ logging.basicConfig(format='%(asctime)s\t%(levelname)s:%(message)s',filename='in
 from postsofcompliments import postsofcompliments
 app.register_blueprint(postsofcompliments)
 
+from formular import formular
+app.register_blueprint(formular)
+
 @app.route('/')
 def index():
     return redirect(url_for('postsofcompliments.select'))
-
-if __name__ == "__main__":
-    socketio.run(app, debug=True, host='0.0.0.0') #This is only for testing
