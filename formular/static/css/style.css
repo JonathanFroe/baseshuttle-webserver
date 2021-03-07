@@ -2,39 +2,21 @@
 	font-family:"Yanone Kaffeesatz";
 	font-style:normal;
 	font-weight:400;
-	src:url("/fonts/YanoneKaffeesatz-Regular.eot");
-	src:url("/fonts/YanoneKaffeesatz-Regular.eot?#iefix") format("embedded-opentype"),
-		url("/fonts/YanoneKaffeesatz-Regular.woff2") format("woff2"),
-		url("/fonts/YanoneKaffeesatz-Regular.woff") format("woff"),
-		url("/fonts/YanoneKaffeesatz-Regular.ttf") format("truetype"),
-		url("/fonts/YanoneKaffeesatz-Regular.otf") format("opentype"),
-		url("/fonts/YanoneKaffeesatz-Regular.svg") format("svg");
+	src:url("/fonts/YanoneKaffeesatz-Regular.ttf");
 }
 
 @font-face {
 	font-family:"Yanone Kaffeesatz";
 	font-style:normal;
 	font-weight:300;
-	src:url("/fonts/YanoneKaffeesatz-Light.eot");
-	src:url("/fonts/YanoneKaffeesatz-Light.eot?#iefix") format("embedded-opentype"),
-		url("/fonts/YanoneKaffeesatz-Light.woff2") format("woff2"),
-		url("/fonts/YanoneKaffeesatz-Light.woff") format("woff"),
-		url("/fonts/YanoneKaffeesatz-Light.ttf") format("truetype"),
-		url("/fonts/YanoneKaffeesatz-Light.otf") format("opentype"),
-		url("/fonts/YanoneKaffeesatz-Light.svg") format("svg");
+	src:url("/fonts/YanoneKaffeesatz-Light.ttf");
 }
 
 @font-face {
 	font-family:"Yanone Kaffeesatz";
 	font-style:normal;
 	font-weight:700;
-	src:url("/fonts/YanoneKaffeesatz-Bold.eot");
-	src:url("/fonts/YanoneKaffeesatz-Bold.eot?#iefix") format("embedded-opentype"),
-		url("/fonts/YanoneKaffeesatz-Bold.woff2") format("woff2"),
-		url("/fonts/YanoneKaffeesatz-Bold.woff") format("woff"),
-		url("/fonts/YanoneKaffeesatz-Bold.ttf") format("truetype"),
-		url("/fonts/YanoneKaffeesatz-Bold.otf") format("opentype"),
-		url("/fonts/YanoneKaffeesatz-Bold.svg") format("svg");
+	src:url("/fonts/YanoneKaffeesatz-Bold.ttf");
 }
 
 * {
