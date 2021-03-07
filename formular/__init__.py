@@ -1,10 +1,14 @@
 import logging
 import uuid
 
+import send_email
+
 from flask import Blueprint, render_template, request, url_for, redirect
 
 formular = Blueprint('formular', __name__, template_folder='templates',
                                static_folder='static', url_prefix='/formular')
+
+
 
 @formular.route('/', methods=['GET', 'POST'])
 def home():
@@ -23,5 +27,3 @@ def home():
                 file.write(";".join([user_id, email,firstname,lastname, companions]))
         return render_template('formular.html')
     return render_template('formular.html')
-
-@formular
