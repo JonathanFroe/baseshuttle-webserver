@@ -6,28 +6,36 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
-        <title>Holywood</title>
+        <title>Meterstab</title>
         <meta name="robots" content="noindex, nofollow" />
         <link
             rel="stylesheet"
             type="text/css"
-            href="{{ url_for('formular.static', filename='css/normalize.css') }}"
+            href="{{ url_for('meterstab.static', filename='css/normalize.css') }}"
         />
         <link
             rel="stylesheet"
             type="text/css"
-            href="{{ url_for('formular.static', filename='css/style.css') }}"
+            href="{{ url_for('meterstab.static', filename='css/style.css') }}"
         />
     </head>
     <body>
         <div id="site-inner">
             <header>
-                <h1>Holywood-Gottesdienst am 07.03.2021</h1>
+                <h1>Meterstab – Dein Karwochenbegleiter – Gottesdienst-Aktionen in der Jugendkirche</h1>
+                <p>
+                    Länge Di 30.3. 17:30 – 19:30 Gestaltungszeit für Deinen Meterstab (Gottesdienst) <br>
+                    Tiefe: Fr 02.04. 10:00 – 12:00 Uhr Zeitraum für Kreuzgestaltung (Gottesdienst)
+                </p>
                 <p>
                     Aufgrund der staatlichen Maßnahmen zur Eindämmung des
                     Coronavirus ist die Zahl der Gottesdienst-Besucher*innen
                     beschränkt. Die Teilnahme ist nur nach vorheriger Anmeldung
                     zulässig.
+                </p>
+                <p>
+                    <b>Hinweis:</b> Wenn Du an beiden Veranstaltungen teilnehmen möchtest, 
+                    fülle bitte für jeden Tag ein seperates Fromular aus.
                 </p>
                 <p>
                     <b>Wichtig:</b> Die Anmeldung ist verbindlich. Solltest du
@@ -38,7 +46,7 @@
             <main>
                 <form method="POST">
                     <div>
-                        Für welche Uhrzeit möchtest du dich anmelden?
+                        Für welchen Tag möchtest du dich anmelden?
                         <div class="radio">
                             <div>
                                 <input
@@ -48,7 +56,7 @@
                                     value="1"
                                     required
                                 /><label for="time1"
-                                    >18:00 Uhr<br /><i>{{ count_time1}} Plätze frei</i></label
+                                    >Dienstag<br /><i>{{ count_time1}} Plätze frei</i></label
                                 >
                             </div>
                             <div>
@@ -59,7 +67,7 @@
                                     value="2"
                                     required
                                 /><label for="time2"
-                                    >20:00 Uhr<br /><i>{{ count_time2}} Plätze frei</i></label
+                                    >Freitag<br /><i>{{ count_time2}} Plätze frei</i></label
                                 >
                             </div>
                         </div>
@@ -138,9 +146,9 @@
             <footer>
                 <p><b>Veranstalter:</b></p>
                 <p>
-                    BDKJ in der Region München e.V. ⋅
+                    Jugendstellen Trudering, Bogenhausen, Giesing
                     <a
-                        href="http://www.bdkj-muenchen.de/menue-footer/impressum"
+                        href=": https://www.jugendstelle-trudering.de/wir-ueber-uns/impressum"
                         target="_blank"
                         rel="noopener"
                         >Impressum</a

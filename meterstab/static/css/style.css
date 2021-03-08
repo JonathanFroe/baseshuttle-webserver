@@ -39,12 +39,12 @@ body {
 h1 {
 	font-size:40px;
 	font-weight:bold;
-	color:rgb(119,184,0);
+	color:rgb(63, 50, 255);
 	margin:0 0 20px;
 }
 
 a {
-	color:rgb(119,184,0);
+	color:rgb(63, 50, 255);
 	text-decoration:none;
 }
 
@@ -78,7 +78,7 @@ header, main, aside, footer {
 
 .registration {
 	background-color:rgba(119,184,0,0.4);
-	border-left:6px solid rgb(119,184,0);
+	border-left:6px solid rgb(63, 50, 255);
 }
 
 .cancellation {
@@ -131,7 +131,7 @@ input:hover, select:hover, .radio label:hover, label:hover .checkbox {
 }
 
 input:focus, select:focus {
-	border-color:rgb(119,184,0);
+	border-color:rgb(63, 50, 255);
 	border-width:2px;
 	padding:9px;
 }
@@ -178,7 +178,7 @@ input, .select-wrapper, .radio {
 }
 
 input[type="radio"]:checked + label {
-	border-color:rgb(119,184,0);
+	border-color:rgb(63, 50, 255);
 	border-width:2px;
 	padding:19px 9px;
 }
@@ -234,8 +234,8 @@ select:focus::-ms-value {
 }
 
 input[type="checkbox"]:checked + .checkbox {
-	border-color:rgb(119,184,0);
-	background-color:rgb(119,184,0);
+	border-color:rgb(63, 50, 255);
+	background-color:rgb(63, 50, 255);
 }
 
 input[type="checkbox"]:checked + .checkbox:before {
@@ -257,7 +257,7 @@ input[type="checkbox"]:checked + .checkbox:before {
 button {
 	display:block;
 	color:#fff;
-	background-color:rgb(119,184,0);
+	background-color:rgb(63, 50, 255);
 	padding:10px;
 	cursor:pointer;
 	-webkit-box-sizing:border-box;

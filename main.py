@@ -20,8 +20,8 @@ logging.basicConfig(format='%(asctime)s\t%(levelname)s:%(message)s',filename='in
 from postsofcompliments import postsofcompliments
 app.register_blueprint(postsofcompliments)
 
-from formular import formular
-app.register_blueprint(formular)
+from meterstab import meterstab
+app.register_blueprint(meterstab)
 
 @app.route('/')
 def index():
