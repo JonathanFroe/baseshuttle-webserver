@@ -1,5 +1,6 @@
 import logging
 import uuid
+import threading
 
 import meterstab.send_email
 
@@ -30,9 +31,11 @@ def home():
         companions = request.form['companions']
         
         with open('meterstab/data/participant.csv', 'a') as file:
-            file.write(";".join([user_id,email,firstname,lastname,companions, time])+ "\n")              
-                
-        send_email.send_confirm_email(email, user_id, firstname, time, companions)
+            file.write(";".join([user_id,email,firstname,lastname,companions, time])+ "\n")
+                 
+        trd = threading.Thread(target=send_email.send_confirm_email, args=(email, user_id, firstname, time, companions,))
+        trd.start()
+        
         count = count_free()
         return render_template('meterstab.html', count_time1=count[0], count_time2=count[1])
     count = count_free()
