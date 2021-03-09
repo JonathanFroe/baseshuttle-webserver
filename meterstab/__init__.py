@@ -30,6 +30,10 @@ def home():
         lastname = request.form['lastname']
         companions = request.form['companions']
         
+        count = count_free()
+        if int(companions) + 1 > count[int(time)-1]:
+            return render_template('meterstab.html',count_time1=count[0], count_time2=count[1])
+        
         with open('meterstab/data/participant.csv', 'a') as file:
             file.write(";".join([user_id,email,firstname,lastname,companions, time])+ "\n")
                  
