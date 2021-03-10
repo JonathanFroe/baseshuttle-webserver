@@ -6,36 +6,32 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
-        <title>Meterstab</title>
+        <title>VIOLETT – imPuls der Fastenzeit</title>
         <meta name="robots" content="noindex, nofollow" />
         <link
             rel="stylesheet"
             type="text/css"
-            href="{{ url_for('meterstab.static', filename='css/normalize.css') }}"
+            href="{{ url_for('violett.static', filename='css/normalize.css') }}"
         />
         <link
             rel="stylesheet"
             type="text/css"
-            href="{{ url_for('meterstab.static', filename='css/style.css') }}"
+            href="{{ url_for('violett.static', filename='css/style.css') }}"
         />
     </head>
     <body>
         <div id="site-inner">
             <header>
-                <h1>Meterstab – Dein Karwochenbegleiter – Gottesdienst-Aktionen in der Jugendkirche</h1>
+                <h1>VIOLETT -   imPULS  der Fastenzeit</h1>
                 <p>
-                    Länge Di 30.3. 17:30 – 19:30 Gestaltungszeit für Deinen Meterstab (Gottesdienst) <br>
-                    Tiefe: Fr 02.04. 10:00 – 12:00 Uhr Zeitraum für Kreuzgestaltung (Gottesdienst)
+                    Impulsabend 25. März 2021<br>
+                    19:30 Uhr bis 20:15 Uhr
                 </p>
                 <p>
                     Aufgrund der staatlichen Maßnahmen zur Eindämmung des
-                    Coronavirus ist die Zahl der Gottesdienst-Besucher*innen
+                    Coronavirus ist die Zahl der Teilnehmer*innen
                     beschränkt. Die Teilnahme ist nur nach vorheriger Anmeldung
                     zulässig.
-                </p>
-                <p>
-                    <b>Hinweis:</b> Wenn Du an beiden Veranstaltungen teilnehmen möchtest, 
-                    fülle bitte für jeden Tag ein seperates Fromular aus.
                 </p>
                 <p>
                     <b>Wichtig:</b> Die Anmeldung ist verbindlich. Solltest du
@@ -46,29 +42,9 @@
             <main>
                 <form method="POST">
                     <div>
-                        Für welchen Tag möchtest du dich anmelden?
-                        <div class="radio">
-                            <div>
-                                <input
-                                    type="radio"
-                                    id="time1"
-                                    name="time"
-                                    value="1"
-                                    required
-                                /><label for="time1"
-                                    >Dienstag<br /><i>{{ count_time1}} Plätze frei</i></label
-                                >
-                            </div>
-                            <div>
-                                <input
-                                    type="radio"
-                                    id="time2"
-                                    name="time"
-                                    value="2"
-                                    required
-                                /><label for="time2"
-                                    >Freitag<br /><i>{{ count_time2}} Plätze frei</i></label
-                                >
+                        <div class="infobox">
+                            <div class="infotext">
+                                Noch<br /><i>{{ count_time1}} Plätze frei</i>
                             </div>
                         </div>
                     </div>
@@ -88,7 +64,7 @@
                     </div>
                     <div>
                         Anmeldung von Begleitpersonen<br /><i
-                            >(max. 3 weitere Personen aus dem eigenen
+                            >(max. 2 weitere Personen aus dem eigenen
                             Hausstand)</i
                         >
                         <div class="select-wrapper">
@@ -99,7 +75,6 @@
                                 <option value="0">Keine Begleitperson</option>
                                 <option value="1">1 Begleitperson</option>
                                 <option value="2">2 Begleitpersonen</option>
-                                <option value="3">3 Begleitpersonen</option>
                             </select>
                         </div>
                     </div>
@@ -146,13 +121,7 @@
             <footer>
                 <p><b>Veranstalter:</b></p>
                 <p>
-                    Jugendstellen Trudering, Bogenhausen, Giesing
-                    <a
-                        href="https://www.jugendstelle-trudering.de/wir-ueber-uns/impressum"
-                        target="_blank"
-                        rel="noopener"
-                        >Impressum</a
-                    >
+                    Jugendstellen in der Region Südost
                 </p>
             </footer>
         </div>

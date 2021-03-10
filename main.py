@@ -23,6 +23,9 @@ app.register_blueprint(postsofcompliments)
 from meterstab import meterstab
 app.register_blueprint(meterstab)
 
+from violett import violett
+app.register_blueprint(violett)
+
 @app.route('/')
 def index():
     return redirect(url_for('postsofcompliments.select'))
