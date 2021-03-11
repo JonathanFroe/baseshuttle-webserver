@@ -10,8 +10,7 @@ violett = Blueprint('violett', __name__, template_folder='templates',
                                static_folder='static', url_prefix='/violett')
 
 def count_free():
-    count1 = 50
-    count2 = 50
+    count1 = 40
     with open('violett/data/participant.csv', 'r') as file:
         for line in file.readlines():
            count1 -= 1 + int(line.split(";")[-1])
