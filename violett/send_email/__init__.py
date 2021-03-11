@@ -22,7 +22,7 @@ def send_confirm_email(to, user_id, name, companions):
     
     msg = MIMEText(msg, 'html')
     msg["Subject"] = 'Bestätigungsemail zu VIOLETT – imPuls der Fastenzeit'
-    msg['From'] = "Jugendstelle in der Region Südost"
+    msg['From'] = "Jugendstellen in der Region Südost"
     
     with smtplib.SMTP_SSL("smtp.strato.de", port=port, context=context) as server:
         server.login("info@baseshuttle.de", password)
