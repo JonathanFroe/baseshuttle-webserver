@@ -22,7 +22,7 @@ def send_confirm_email(to, user_id, name, time, companions):
     else:
         msg = msg.replace('$time', 'Freitag 02.04. 10:00 – 12:00 Uhr')
     msg = msg.replace('$companions', str(int(companions)+1))
-    msg = msg.replace('$url', "baseshuttle.de/meterstab/cancel/" + user_id)
+    msg = msg.replace('$url', "https://baseshuttle.de/meterstab/cancel/" + user_id)
     
     msg = MIMEText(msg, 'html')
     msg["Subject"] = 'Bestätigungsemail zu Meeterstab-Aktion-Anmeldung'
