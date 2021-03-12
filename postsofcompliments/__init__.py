@@ -67,7 +67,7 @@ def create_game():
     with open('postsofcompliments/karten.list', 'r') as karten:
         card_elements = "\n".join(
             choices(karten.read().split("\n"), k=card_counter))
-    url = request.host_url + "/join?id=" + session_id
+    url = request.host_url + "/postsofcompliments/join?id=" + session_id
     return render_template("create.html", card_elements=card_elements, session_id=session_id, url=url, card_counter=card_counter)
 
 
