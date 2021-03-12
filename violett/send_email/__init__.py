@@ -21,10 +21,11 @@ def send_confirm_email(to, user_id, name, companions):
     msg = msg.replace('$url', "https://baseshuttle.de/violett/cancel/" + user_id)
     
     msg = MIMEText(msg, 'html')
-    msg["Subject"] = 'Bestätigungsemail zu VIOLETT – imPuls der Fastenzeit'
-    msg['From'] = "Jugendstellen in der Region Südost"
     
-    with smtplib.SMTP_SSL("smtp.strato.de", port=port, context=context) as server:
-        server.login("info@baseshuttle.de", password)
-        server.sendmail( "info@baseshuttle.de", to, msg.as_string())
+    msg["Subject"] = 'Bestätigungsemail zu VIOLETT – imPuls der Fastenzeit'
+    
+    server = smtplib.SMTP_SSL("smtp.strato.de", port)
+    server.login("info@baseshuttle.de", password)
+    server.sendmail( "info@baseshuttle.de", to, msg.as_string())
+    server.close()
         

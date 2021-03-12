@@ -26,9 +26,10 @@ def send_confirm_email(to, user_id, name, time, companions):
     
     msg = MIMEText(msg, 'html')
     msg["Subject"] = 'Bestätigungsemail zu Meeterstab-Aktion-Anmeldung'
-    msg['From'] = "Jugenstelle Trudering"
     
-    with smtplib.SMTP_SSL("smtp.strato.de", port=port, context=context) as server:
-        server.login("info@baseshuttle.de", password)
-        server.sendmail( "info@baseshuttle.de", to, msg.as_string())
+    
+    server = smtplib.SMTP_SSL("smtp.strato.de", port)
+    server.login("info@baseshuttle.de", password)
+    server.sendmail("info@baseshuttle.de", to, msg.as_string())
+    server.close()
         
