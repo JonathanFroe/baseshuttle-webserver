@@ -7,7 +7,7 @@ import meterstab.send_email
 from flask import Blueprint, render_template, request, url_for, redirect
 
 meterstab = Blueprint('meterstab', __name__, template_folder='templates',
-                               static_folder='static', url_prefix='/meterstab')
+                               static_folder='static', url_prefix='/archiv/meterstab')
 
 def count_free():
     count1 = 50

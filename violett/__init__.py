@@ -7,7 +7,7 @@ import violett.send_email
 from flask import Blueprint, render_template, request, url_for, redirect
 
 violett = Blueprint('violett', __name__, template_folder='templates',
-                               static_folder='static', url_prefix='/violett')
+                               static_folder='static', url_prefix='/archiv/violett')
 
 def count_free():
     count1 = 40
