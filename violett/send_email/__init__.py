@@ -1,4 +1,4 @@
-import const
+import data.const as const
 
 
 import smtplib, ssl

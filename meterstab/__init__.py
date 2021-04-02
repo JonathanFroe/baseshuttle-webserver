@@ -12,7 +12,7 @@ meterstab = Blueprint('meterstab', __name__, template_folder='templates',
 def count_free():
     count1 = 50
     count2 = 50
-    with open('meterstab/data/participant.csv', 'r') as file:
+    with open('data/meterstab/participant.csv', 'r') as file:
         for line in file.readlines():
             if int(line.split(";")[-1]) == 1:
                 count1 -= 1 + int(line.split(";")[-2])
@@ -34,7 +34,7 @@ def home():
         if int(companions) + 1 > count[int(time)-1]:
             return render_template('meterstab.html',count_time1=count[0], count_time2=count[1])
         
-        with open('meterstab/data/participant.csv', 'a') as file:
+        with open('data/meterstab/participant.csv', 'a') as file:
             file.write(";".join([user_id,email,firstname,lastname,companions, time])+ "\n")
                  
         trd = threading.Thread(target=send_email.send_confirm_email, args=(email, user_id, firstname, time, companions,))
@@ -47,9 +47,9 @@ def home():
 
 @meterstab.route('/cancel/<id>')
 def cancel(id):
-    with open("meterstab/data/participant.csv", "r") as f:
+    with open("data/meterstab/participant.csv", "r") as f:
         lines = f.readlines()
-    with open("meterstab/data/participant.csv", "w") as f:
+    with open("data/meterstab/participant.csv", "w") as f:
         for line in lines:
             if line.split(";")[0] != id:
                 f.write(line)
