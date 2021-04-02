@@ -63,6 +63,8 @@ def create_game():
         if "refresh" in request.form:
             card_counter = int(request.form['card_counter'])
     session_id = ''.join(choice(ascii_uppercase) for i in range(6))
+    while db.session.query(Group.group_id).filter_by(group_id=session_id).scalar() is not None:
+        session_id = ''.join(choice(ascii_uppercase) for i in range(6))
     card_elements = None
     with open('postsofcompliments/karten.list', 'r') as karten:
         card_elements = "\n".join(
