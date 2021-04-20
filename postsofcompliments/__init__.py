@@ -33,6 +33,9 @@ class Group(db.Model):
 
 db.create_all()
 
+@postsofcompliments.route('/play_javascript')
+def play_javascript():
+    return render_template("play.js")
 
 @postsofcompliments.route('/')
 def select():
