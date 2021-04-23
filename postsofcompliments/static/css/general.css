@@ -77,7 +77,7 @@ textarea {
     border: 2px solid var(--grey);
     margin-top: 15px;
     background: none;
-    white-space: nowrap;
+    white-space: pre;
 }
 
 input[type="text"],
