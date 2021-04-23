@@ -8,6 +8,9 @@
             href="{{ url_for('postsofcompliments.static', filename='css/general.css')}}"
         />
         <title>Baseshuttle</title>
+        <style>
+            body {background-image: url('{{ url_for("postsofcompliments.static", filename="svg/blueprint_dark.svg") }}');}
+        </style>
     </head>
     <body>
         <div class="main">
@@ -26,8 +29,7 @@
             </div>
         </div>
         <footer>
-            Powered by
-            <a href="https://jonathanfroehlich.de">Jonathan Fröhlich</a>
+            <a href="https://jonathanfroehlich.de"><img src="{{ url_for('postsofcompliments.static', filename='svg/jf_logo.svg')}}"></a>
         </footer>
     </body>
 </html>

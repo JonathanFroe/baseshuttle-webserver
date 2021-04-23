@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 280 380" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-200,-100)">
+        <g transform="matrix(1,-1.22465e-16,1.22465e-16,1,0,-70)">
+            <g id="Buchstabe-J" serif:id="Buchstabe J">
+                <g id="Vordergrund">
+                    <g transform="matrix(1,0,0,1,-200,130)">
+                        <path d="M400,120L600,120L600,370L550,420L450,420L400,370L400,320L450,370L530,370L550,350L550,170L400,170L400,120Z" style="fill:rgb(255,86,0);"/>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-200,130)">
+                        <path d="M620,100L620,350L600,370L600,120L620,100Z" style="fill:rgb(202,68,0);"/>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-200,130)">
+                        <path d="M400,320L420,300L470,350L450,370L400,320Z" style="fill:rgb(202,68,0);"/>
+                    </g>
+                    <g transform="matrix(1,0,0,1,-200,130)">
+                        <path d="M450,370L470,350L550,350L530,370L450,370Z" style="fill:rgb(255,108,0);"/>
+                    </g>
+                    <path d="M400,500L400,250L480,170L480,220L420,290L420,350L480,290L480,340L420,400L420,480L400,500Z" style="fill:rgb(202,68,0);"/>
+                    <path d="M200,250L220,230L370,230L430,170L480,170L400,250L200,250Z" style="fill:rgb(255,108,0);"/>
+                    <path d="M420,350L480,290L430,290L420,300L420,350Z" style="fill:rgb(255,108,0);"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
